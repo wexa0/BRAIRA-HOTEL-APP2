@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
@@ -10,11 +8,7 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : HomePageWidget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const HomePageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : HomePageWidget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const HomePageWidget(),
         ),
         FFRoute(
           name: 'roompage',
@@ -108,20 +102,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'MyReservations',
           path: '/myReservations',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'MyReservations')
-              : MyReservationsWidget(),
+              ? const NavBarPage(initialPage: 'MyReservations')
+              : const MyReservationsWidget(),
         ),
         FFRoute(
           name: 'search',
           path: '/search',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'search')
-              : SearchWidget(),
+              ? const NavBarPage(initialPage: 'search')
+              : const SearchWidget(),
         ),
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => const HomePageWidget(),
         ),
         FFRoute(
           name: 'ViewReservation',
@@ -145,12 +139,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'SIGNUP',
           path: '/signup',
-          builder: (context, params) => SignupWidget(),
+          builder: (context, params) => const SignupWidget(),
         ),
         FFRoute(
           name: 'SIGNIN',
           path: '/signin',
-          builder: (context, params) => SigninWidget(),
+          builder: (context, params) => const SigninWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -336,7 +330,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Color(0xFFCCBBFF),
+                  color: const Color(0xFFCCBBFF),
                   child: Image.asset(
                     'assets/images/unnamed.png',
                     fit: BoxFit.contain,
@@ -384,7 +378,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

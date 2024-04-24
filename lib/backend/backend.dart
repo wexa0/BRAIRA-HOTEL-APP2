@@ -8,7 +8,6 @@ import 'schema/util/firestore_util.dart';
 import 'schema/room_record.dart';
 import 'schema/booking_record.dart';
 import 'schema/guest_record.dart';
-import 'schema/test2_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,7 +19,6 @@ export 'schema/util/schema_util.dart';
 export 'schema/room_record.dart';
 export 'schema/booking_record.dart';
 export 'schema/guest_record.dart';
-export 'schema/test2_record.dart';
 
 /// Functions to query RoomRecords (as a Stream and as a Future).
 Future<int> queryRoomRecordCount({
@@ -128,43 +126,6 @@ Future<List<GuestRecord>> queryGuestRecordOnce({
     queryCollectionOnce(
       GuestRecord.collection,
       GuestRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query Test2Records (as a Stream and as a Future).
-Future<int> queryTest2RecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      Test2Record.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<Test2Record>> queryTest2Record({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      Test2Record.collection,
-      Test2Record.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<Test2Record>> queryTest2RecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      Test2Record.collection,
-      Test2Record.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
@@ -289,7 +250,7 @@ Future<FFFirestorePage<T>> queryCollectionPage<T>(
   } else {
     docSnapshot = await query.get();
   }
-  final getDocs = (QuerySnapshot s) => s.docs
+  getDocs(QuerySnapshot s) => s.docs
       .map(
         (d) => safeGet(
           () => recordBuilder(d),

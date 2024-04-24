@@ -1,22 +1,15 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/edit_reservation/edit_reservation_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'view_reservation_model.dart';
 export 'view_reservation_model.dart';
 
@@ -62,8 +55,8 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -81,8 +74,8 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(50.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(50.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -101,8 +94,8 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(60.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(60.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -121,8 +114,8 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
             curve: Curves.easeInOut,
             delay: 100.0.ms,
             duration: 600.0.ms,
-            begin: Offset(60.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(60.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -190,10 +183,10 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
               ),
               actions: [
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 5.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 5.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -253,12 +246,12 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                               builder: (alertDialogContext) {
                                 return AlertDialog(
                                   title:
-                                      Text('canclr reservation was succesful.'),
+                                      const Text('canclr reservation was succesful.'),
                                   actions: [
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
+                                      child: const Text('Ok'),
                                     ),
                                   ],
                                 );
@@ -268,7 +261,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                             context.pushNamed('MyReservations');
                           },
                         ),
-                      ].divide(SizedBox(width: 12.0)),
+                      ].divide(const SizedBox(width: 12.0)),
                     ),
                   ),
                 ),
@@ -304,13 +297,13 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                           builder: (context) {
                             final imagesfiled =
                                 pageViewRoomRecord.roomImage.toList();
-                            return Container(
+                            return SizedBox(
                               width: double.infinity,
                               height: 500.0,
                               child: Stack(
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: PageView.builder(
                                       controller: _model.pageViewController ??=
@@ -339,9 +332,9 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                     ),
                                   ),
                                   Align(
-                                    alignment: AlignmentDirectional(-1.0, 1.0),
+                                    alignment: const AlignmentDirectional(-1.0, 1.0),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           135.0, 0.0, 0.0, 21.0),
                                       child: smooth_page_indicator
                                           .SmoothPageIndicator(
@@ -361,11 +354,11 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                               .animateToPage(
                                             i,
                                             duration:
-                                                Duration(milliseconds: 500),
+                                                const Duration(milliseconds: 500),
                                             curve: Curves.ease,
                                           );
                                         },
-                                        effect: smooth_page_indicator
+                                        effect: const smooth_page_indicator
                                             .ExpandingDotsEffect(
                                           expansionFactor: 3.0,
                                           spacing: 8.0,
@@ -389,9 +382,9 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                   ),
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(1.2, 0.0),
+                      alignment: const AlignmentDirectional(1.2, 0.0),
                       child: Padding(
-                        padding: EdgeInsets.all(12.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -432,7 +425,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                             .labelSmall
                                             .override(
                                               fontFamily: 'Readex Pro',
-                                              color: Color(0xFF702EA7),
+                                              color: const Color(0xFF702EA7),
                                               fontSize: 20.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
@@ -475,7 +468,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Readex Pro',
-                                              color: Color(0xFF57636C),
+                                              color: const Color(0xFF57636C),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -486,7 +479,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Readex Pro',
-                                              color: Color(0xFF57636C),
+                                              color: const Color(0xFF57636C),
                                               fontSize: 10.0,
                                               letterSpacing: 0.0,
                                             ),
@@ -502,7 +495,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                               ).animateOnPageLoad(
                                   animationsMap['dividerOnPageLoadAnimation']!),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 4.0, 0.0, 0.0),
                                 child: Text(
                                   'Description',
@@ -510,7 +503,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                       .labelSmall
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFF702EA7),
+                                        color: const Color(0xFF702EA7),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -519,7 +512,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                     animationsMap['textOnPageLoadAnimation2']!),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     4.0, 4.0, 0.0, 17.0),
                                 child: StreamBuilder<RoomRecord>(
                                   stream:
@@ -549,7 +542,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: Color(0xFF57636C),
+                                            color: const Color(0xFF57636C),
                                             fontSize: 12.0,
                                             letterSpacing: 0.0,
                                           ),
@@ -563,7 +556,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                 color: FlutterFlowTheme.of(context).alternate,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 6.0, 0.0, 10.0),
                                 child: Text(
                                   'Services',
@@ -571,7 +564,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                       .labelSmall
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFF702EA7),
+                                        color: const Color(0xFF702EA7),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.w500,
@@ -675,7 +668,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           0.7, -0.6),
                                                   child: Text(
                                                     'swimming pool',
@@ -728,7 +721,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                 color: FlutterFlowTheme.of(context).alternate,
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 10.0),
                                 child: Text(
                                   'Duration (# of nights)',
@@ -736,13 +729,13 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Readex Pro',
-                                        color: Color(0xFF57636C),
+                                        color: const Color(0xFF57636C),
                                         letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -775,7 +768,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(10.0, 9.0, 12.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(10.0, 9.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -790,7 +783,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                   ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -838,7 +831,7 @@ class _ViewReservationWidgetState extends State<ViewReservationWidget>
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
-                                        TextSpan(
+                                        const TextSpan(
                                           text: '\$',
                                           style: TextStyle(),
                                         )

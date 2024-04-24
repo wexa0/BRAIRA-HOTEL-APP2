@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import '/backend/backend.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -25,7 +22,7 @@ class FFAppState extends ChangeNotifier {
 
   bool _TryLogin = false;
   bool get TryLogin => _TryLogin;
-  set TryLogin(bool _value) {
-    _TryLogin = _value;
+  set TryLogin(bool value) {
+    _TryLogin = value;
   }
 }
