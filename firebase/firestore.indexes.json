@@ -1,0 +1,36 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "Booking",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "isCanceled",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Guest",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Check_In_Date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Booking",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "Guest",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "Check_In_Date",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}
